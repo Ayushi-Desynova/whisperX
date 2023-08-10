@@ -160,7 +160,8 @@ def cli():
         print("Result", result)
         # result = "అరుగు మీద కూర్చుని పల్లీలు తింటూ ఉంటుంది అత్తగారు శారద కోడలు అనామిక ఇంటి ముందున్న బోలు ముక్కలకు నీళ్లు పోస్తుండగా కూలి"
         results.append((result, audio_path))
-      print(results)
+        print("*"*100)
+        print("Final Result with audio",results)
 
     # Unload Whisper and VAD
     del model
