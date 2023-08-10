@@ -156,8 +156,9 @@ def cli():
         audio = load_audio(audio_path)
         # >> VAD & ASR
         print(">>Performing transcription...")
-        # result = model.transcribe(audio, batch_size=batch_size)
-        result = "అరుగు మీద కూర్చుని పల్లీలు తింటూ ఉంటుంది అత్తగారు శారద కోడలు అనామిక ఇంటి ముందున్న బోలు ముక్కలకు నీళ్లు పోస్తుండగా కూలి"
+        result = model.transcribe(audio, batch_size=batch_size)
+        print("Result",result)
+        # result = "అరుగు మీద కూర్చుని పల్లీలు తింటూ ఉంటుంది అత్తగారు శారద కోడలు అనామిక ఇంటి ముందున్న బోలు ముక్కలకు నీళ్లు పోస్తుండగా కూలి"
         results.append((result, audio_path))
       print(results)
 
@@ -181,6 +182,7 @@ def cli():
                 input_audio = audio
 
             if align_model is not None and len(result["segments"]) > 0:
+
                 if result.get("language", "en") != align_metadata["language"]:
                     # load new language
                     print(f"New language found ({result['language']})! Previous was ({align_metadata['language']}), loading new alignment model for new language...")
