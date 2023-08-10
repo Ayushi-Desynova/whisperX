@@ -155,9 +155,9 @@ def cli():
     for audio_path in args.pop("audio"):
         audio = load_audio(audio_path)
         # >> VAD & ASR
-        print(">>Performing transcription...")
+        print(">>Performing transcription**************************************")
         result = model.transcribe(audio, batch_size=batch_size)
-        print("Result",result)
+        print("Result", result)
         # result = "అరుగు మీద కూర్చుని పల్లీలు తింటూ ఉంటుంది అత్తగారు శారద కోడలు అనామిక ఇంటి ముందున్న బోలు ముక్కలకు నీళ్లు పోస్తుండగా కూలి"
         results.append((result, audio_path))
       print(results)
